@@ -32,7 +32,7 @@ while(True):
          pyttsx3.speak("You are welcome")
          print("You are welcome :)")
     elif("help" in ch):
-        pyttsx3.speak("I can open Notepad , Google , Windows Media player , Calculator and Whatsapp")
+        pyttsx3.speak("I can open Notepad , Google , Windows Media player , Calculator , Paint and Whatsapp")
         print("Notepad")
         print("Google")
         print("Windows Media Player")
@@ -41,6 +41,7 @@ while(True):
         print("Whatsapp")
     
     elif("do not" in ch):
+        pyttsx3.speak("Fine")
         print("Done!")
     else:
         pyttsx3.speak("Sorry, I could not understand. Once type help to see whether the command is there or not ")
