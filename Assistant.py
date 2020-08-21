@@ -18,7 +18,7 @@ while(True):
         os.system("chrome")
     elif(("message" in ch or "whatsapp" in ch or "text" in ch or "ping" in ch or "call" in ch) and ("not" not in ch)):
         pyttsx3.speak("Opening Whatsapp")
-        os.system("whatsapp")
+        os.system("whatsapp.lnk")
     elif(("media" in ch or "player" in ch or "wmplayer" in ch ) and ("not" not in ch)):
         pyttsx3.speak("Opening Windows media player")
         os.system("wmplayer")
