@@ -1,11 +1,13 @@
 import os
 import pyttsx3
+import webbrowser
 
-print("Hello Keerthana Pravallika ! , This is your Personal Assistant \'Pandu\'")
+print("Hello Keerthana Pravallika ! , This is your Personal Assistant  \'Pandu\'")
 pyttsx3.speak("Hello Keerthana pravallika , This is your Personal Assistant Pandu")
+print("If you want to stop this program just enter \'stop\'")
 
 pyttsx3.speak("How can I help you ")
-ch = input("How can I help you? ")
+ch = input("How can I help you? ").lower()
 
 while(True):
     
@@ -18,7 +20,22 @@ while(True):
         os.system("chrome")
     elif(("message" in ch or "whatsapp" in ch or "text" in ch or "ping" in ch or "call" in ch) and ("not" not in ch)):
         pyttsx3.speak("Opening Whatsapp")
-        os.system("whatsapp.lnk")
+        webbrowser.open("whatsapp.com")
+    elif(("youtube" in ch or "you tube" in ch)  and ("not" not in ch) ):
+        pyttsx3.speak("Opening you tube")
+        webbrowser.open("youtube.com")
+    elif("twitter" in ch  and ("not" not in ch)):
+        pyttsx3.speak("Opening Twitter")
+        webbrowser.open("twitter.com")
+    elif("facebook" in ch  and ("not" not in ch)):
+        pyttsx3.speak("Opening Facebook")
+        webbrowser.open("facebook.com")
+    elif("linkedin" in ch  and ("not" not in ch)):
+        pyttsx3.speak("Opening Linkedin")
+        webbrowser.open("linkedin.com")
+    elif("mail" in ch  and ("not" not in ch)):
+        pyttsx3.speak("Opening Gmail")
+        webbrowser.open("gmail.com")
     elif(("media" in ch or "player" in ch or "wmplayer" in ch ) and ("not" not in ch)):
         pyttsx3.speak("Opening Windows media player")
         os.system("wmplayer")
@@ -28,28 +45,35 @@ while(True):
     elif(("paint" in ch or "draw" in ch or "sketch" in ch) and ("not" not in ch)):
         pyttsx3.speak("Opening Paint")
         os.system("mspaint.exe")
-    elif("thanks" in ch or "thank you" in ch):
+    elif("thank" in ch ):
          pyttsx3.speak("You are welcome")
          print("You are welcome :)")
     elif("help" in ch):
-        pyttsx3.speak("I can open Notepad , Google , Windows Media player , Calculator , Paint and Whatsapp")
+        pyttsx3.speak("I can open Notepad , Google , Windows Media player , You tube , Gmail , Linkedin , Facebook , Twitter ,  Calculator , Paint and Whatsapp")
         print("Notepad")
         print("Google")
         print("Windows Media Player")
+        print("You Tube")
+        print("Gmail")
+        print("Linkedin")
+        print("Facebook")
+        print("Twitter")
         print("Calculator")
         print("Paint")
         print("Whatsapp")
     
     elif("do not" in ch):
+        print("Okay!")
         pyttsx3.speak("Fine")
-        print("Done!")
     else:
         pyttsx3.speak("Sorry, I could not understand. Once type help to see whether the command is there or not ")
-        
+        print("Sorry, I could not understand. Once type help to see whether the command is there or not")
     
     pyttsx3.speak("How else can I help you")
-    ch = input("How else can I help you ? ")
+    ch = input("How else can I help you ? ").lower()
     if("stop" in ch):
         pyttsx3.speak("Thank you , Have a nice day")
         print("Thank you , Have a Nice day !")
         break
+    
+
