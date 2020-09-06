@@ -1,16 +1,29 @@
 import os
 import pyttsx3
 import webbrowser
+import speech_recognition as sr
+
+def get():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("How can I help you? ")
+        audio = r.listen(source)
+        print("done!")
+    try:
+        ch = r.recognize_google(audio).lower()
+        print("You said "+ ch)
+        return ch
+    except Exception as e:
+        print(e)
 
 print("Hello Keerthana Pravallika ! , This is your Personal Assistant  \'Pandu\'")
 pyttsx3.speak("Hello Keerthana pravallika , This is your Personal Assistant Pandu")
 print("If you want to stop this program just enter \'stop\'")
 
 pyttsx3.speak("How can I help you ")
-ch = input("How can I help you? ").lower()
+ch = get()
 
-while(True):
-    
+while(True):   
     
     if(("notepad" in ch or "editor" in ch or "text editor" in ch or "write" in ch ) and ("not" not in ch)):
         pyttsx3.speak("Opening Notepad")
@@ -70,10 +83,9 @@ while(True):
         print("Sorry, I could not understand. Once type help to see whether the command is there or not")
     
     pyttsx3.speak("How else can I help you")
-    ch = input("How else can I help you ? ").lower()
+    ch = get()
     if("stop" in ch):
         pyttsx3.speak("Thank you , Have a nice day")
         print("Thank you , Have a Nice day !")
         break
     
-
