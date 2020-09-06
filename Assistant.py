@@ -11,7 +11,7 @@ def get():
         print("done!")
     try:
         ch = r.recognize_google(audio).lower()
-        print("You said "+ ch)
+        print("You said : "+ ch)
         return ch
     except Exception as e:
         print(e)
