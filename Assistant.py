@@ -79,8 +79,8 @@ while(True):
         print("Okay!")
         pyttsx3.speak("Fine")
     else:
-        pyttsx3.speak("Sorry, I could not understand. Once type help to see whether the command is there or not ")
-        print("Sorry, I could not understand. Once type help to see whether the command is there or not")
+        pyttsx3.speak("Sorry, I could not understand. Once say help to see whether the command is there or not ")
+        print("Sorry, I could not understand. Once say help to see whether the command is there or not")
     
     pyttsx3.speak("How else can I help you")
     ch = get()
